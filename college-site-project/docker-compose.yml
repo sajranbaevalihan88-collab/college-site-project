@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
+    environment:
+      - PORT=5000
+      - CORS_ORIGIN=*
+      - JWT_SECRET=8f5b821415664a7c062820d8805f316e6f9a0c841abfa2ed7516dfecde7e651239c43810243ac82319ef59843c09b61d3319089201f8087ab9208a8039c36606
+    restart: unless-stopped

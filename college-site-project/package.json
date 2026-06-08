@@ -1,0 +1,12 @@
+{
+  "name": "it-college-project",
+  "version": "1.0.0",
+  "description": "IT College Project",
+  "scripts": {
+    "dev": "cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "db:init": "cd backend && npm run db:init",
+    "db:seed": "cd backend && npm run db:seed",
+    "kill-port": "npx kill-port 3000"
+  }
+}

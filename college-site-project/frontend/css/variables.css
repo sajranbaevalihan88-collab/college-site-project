@@ -1,0 +1,56 @@
+:root {
+  /* основные цвета */
+  --primary-blue: #0F3460;
+  --primary-blue-light: #1A4B85;
+  --accent-yellow: #F9A826; 
+  --accent-yellow-hover: #E0931B;
+  
+  /* потом убрать лишние серые если не юзаются */
+  --white: #FFFFFF;
+  --bg-light: #F4F7F6;
+  --bg-dark: #121212;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --border-color: #E0E0E0;
+
+  /* для алертов */
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+
+  --font-family: 'Inter', 'Roboto', sans-serif;
+  
+  /* тени от старого дизайна, мб поменять */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-blue);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-yellow);
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инновационный колледж IT и бизнеса</title>
+  <meta name="description" content="Современное профессиональное IT-образование в Кыргызстане. Программирование, бизнес, дизайн.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+
+<!-- прогресс -->
+<div id="progressBar" style="position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#F9A826,#0F3460);width:0;z-index:9999;transition:width .3s;"></div>
+
+<!-- менюшка -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="/img/logo.png" alt="IT COLLEGE" style="height: 50px; width: auto; max-width: 200px; object-fit: contain;">
+    </a>
+    <div class="nav-links">
+      <a href="#about">О нас</a>
+      <a href="#programs">Программы</a>
+      <a href="#stats">Статистика</a>
+      <a href="#steps">Поступление</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div class="nav-btns" id="navAuthBtns">
+      <a href="/login.html" class="btn btn-outline-light btn-sm">Войти</a>
+      <a href="/register.html" class="btn btn-accent btn-sm">Регистрация</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- мобилка -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+    <a href="#about">О нас</a>
+    <a href="#programs">Программы</a>
+    <a href="#stats">Статистика</a>
+    <a href="#steps">Поступление</a>
+    <a href="#contacts">Контакты</a>
+    <div id="mobileAuthBtns" style="display:flex;gap:10px;margin-top:20px;">
+      <a href="/login.html" class="btn btn-outline-light">Войти</a>
+      <a href="/register.html" class="btn btn-accent">Регистрация</a>
+    </div>
+  </div>
+</div>
+
+<!-- главный блок -->
+<section class="hero">
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="hero-inner container">
+    <div class="hero-content reveal">
+      <div class="hero-badge"><span class="pulse-dot"></span> Приём 2025/2026 открыт</div>
+      <h1>Начни карьеру<br>в <span class="typed-text" id="typedText">IT</span> уже сегодня</h1>
+      <p>Инновационный колледж IT и бизнеса — современное профессиональное образование. Диплом государственного образца. Бюджетные места. Трудоустройство.</p>
+      <div class="hero-btns">
+        <a href="/register.html" class="btn btn-accent btn-lg"><i class="fas fa-user-plus"></i> Подать документы</a>
+        <a href="#programs" class="btn btn-outline-light btn-lg">Программы →</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-right">
+      <div class="hero-card glass">
+        <div class="hero-card-badge"><i class="fas fa-star"></i> ТОП колледж</div>
+        <h3>IT COLLEGE</h3>
+        <p>Современный кампус, лаборатории, опытные преподаватели-практики</p>
+        <div class="hero-card-stats">
+          <div><strong>1500+</strong><span>студентов</span></div>
+          <div><strong>50+</strong><span>партнёров</span></div>
+          <div><strong>3</strong><span>диплома</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK BAR -->
+<section class="quick-bar">
+  <div class="quick-inner">
+    <a href="/register.html" class="quick-item"><i class="fas fa-clipboard-list"></i> Подать документы</a>
+    <a href="#steps" class="quick-item"><i class="fas fa-university"></i> Приёмная комиссия</a>
+    <a href="#programs" class="quick-item"><i class="fas fa-dollar-sign"></i> Бюджетные места</a>
+    <a href="#contacts" class="quick-item"><i class="fas fa-calendar-alt"></i> День открытых дверей</a>
+    <a href="#about" class="quick-item"><i class="fas fa-file-alt"></i> Документы</a>
+    <a href="#programs" class="quick-item"><i class="fas fa-exchange-alt"></i> Перевод</a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar" id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="stat-number"><span data-count="5">0</span>+</div>
+        <div class="stat-label">лет опыта</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+        <div class="stat-number"><span data-count="12">0</span></div>
+        <div class="stat-label">программ</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-number"><span data-count="1500">0</span>+</div>
+        <div class="stat-label">студентов</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div class="stat-number"><span data-count="85">0</span>+</div>
+        <div class="stat-label">преподавателей</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- программы (надо потом переделать карточки) -->
+<section class="section" id="programs">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Программы обучения</div>
+      <h2 class="section-title reveal">Выберите свою специальность</h2>
+      <p class="section-subtitle reveal">Современные программы, разработанные с учётом требований рынка труда</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal tilt" data-tilt>
+        <div class="program-icon"><i class="fas fa-code"></i></div>
+        <h3>Программирование</h3>
+        <p>Python, JavaScript, Java. Веб-разработка, мобильные приложения, базы данных</p>
+        <div class="program-skills"><span>Python</span><span>JS</span><span>SQL</span></div>
+      </div>
+      <div class="program-card reveal tilt" data-tilt>
+        <div class="program-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Кибербезопасность</h3>
+        <p>Защита информации, этичный хакинг, криптография, сетевая безопасность</p>
+        <div class="program-skills"><span>Linux</span><span>Networks</span><span>Crypto</span></div>
+      </div>
+      <div class="program-card reveal tilt" data-tilt>
+        <div class="program-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Бизнес-аналитика</h3>
+        <p>Управление проектами, анализ данных, маркетинг, финансы</p>
+        <div class="program-skills"><span>Excel</span><span>BI</span><span>Analytics</span></div>
+      </div>
+      <div class="program-card reveal tilt" data-tilt>
+        <div class="program-icon"><i class="fas fa-palette"></i></div>
+        <h3>Дизайн</h3>
+        <p>UI/UX дизайн, графический дизайн, анимация, Figma, Photoshop</p>
+        <div class="program-skills"><span>Figma</span><span>PS</span><span>UI/UX</span></div>
+      </div>
+      <div class="program-card reveal tilt" data-tilt>
+        <div class="program-icon"><i class="fas fa-calculator"></i></div>
+        <h3>Экономика и бухгалтерия</h3>
+        <p>Бухгалтерский учёт, налогообложение, экономический анализ, 1С</p>
+        <div class="program-skills"><span>1С</span><span>Учёт</span><span>Налоги</span></div>
+      </div>
+      <div class="program-card reveal tilt" data-tilt>
+        <div class="program-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Сетевые технологии</h3>
+        <p>Администрирование сетей, Cisco, облачные технологии, DevOps</p>
+        <div class="program-skills"><span>Cisco</span><span>Cloud</span><span>DevOps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-dark" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal reveal-left">
+        <div class="tag">О колледже</div>
+        <h2 class="section-title" style="color:#fff">Образование нового поколения</h2>
+        <p style="color:rgba(255,255,255,.8)">Инновационный колледж IT и бизнеса — ведущее учебное заведение в области информационных технологий, экономики и дизайна. Мы готовим специалистов, востребованных на рынке труда.</p>
+        <ul class="about-list">
+          <li><div class="about-check"><i class="fas fa-check"></i></div><div><h4>Государственный диплом</h4><p>Диплом государственного образца Кыргызской Республики</p></div></li>
+          <li><div class="about-check"><i class="fas fa-check-circle"></i></div><div><h4>92% трудоустройство</h4><p>Наши выпускники работают в ведущих компаниях</p></div></li>
+          <li><div class="about-check"><i class="fas fa-globe"></i></div><div><h4>Международные связи</h4><p>Партнёрство с вузами России, Германии и Турции</p></div></li>
+        </ul>
+      </div>
+      <div class="about-visual reveal reveal-right">
+        <div class="about-card glass">
+          <div class="about-card-badge"><i class="fas fa-star"></i> Рейтинг #1</div>
+          <h3>Цифровой кампус</h3>
+          <p>Электронный журнал, личные кабинеты, онлайн-расписание — всё в одной системе</p>
+          <a href="/login.html" class="btn btn-accent btn-sm" style="margin-top:15px;">Войти в систему</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section" id="steps">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Поступление</div>
+      <h2 class="section-title reveal" style="color:#fff">Как поступить?</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">1</div><h4>Выберите программу</h4><p>Ознакомьтесь со специальностями</p></div>
+      <div class="step-card reveal"><div class="step-num">2</div><h4>Подготовьте документы</h4><p>Паспорт, аттестат, фото 3×4, мед. справка</p></div>
+      <div class="step-card reveal"><div class="step-num">3</div><h4>Зарегистрируйтесь</h4><p>Создайте аккаунт на нашем портале</p></div>
+      <div class="step-card reveal"><div class="step-num">4</div><h4>Получите зачисление</h4><p>После проверки вы станете студентом!</p></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/register.html" class="btn btn-accent btn-lg"><i class="fas fa-user-plus"></i> Зарегистрироваться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПАСПОРТ КОЛЛЕДЖА ===== -->
+<section class="cert-section" id="passport">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Документы</div>
+      <h2 class="section-title reveal">Паспорт колледжа</h2>
+      <p class="section-subtitle reveal">Лицензии, аккредитации и сертификаты качества IT COLLEGE</p>
+    </div>
+    <div class="cert-container">
+      <button class="cert-nav-btn" id="certPrev" aria-label="Назад">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="cert-wrapper" id="certTrack">
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <div class="cert-title">Лицензия (стр. 1)</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Лицензия LS240002073. Учреждение «Инновационный колледж АйТи и Бизнеса». Образовательная деятельность. Бессрочная.</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 25.09.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <div class="cert-title">Лицензия (стр. 2)</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Лицензия LS240002073. Рег. №2024-0196. Свид-во: 302445-3303-У-е. Приложение №1.</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 25.09.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-scroll"></i></div>
+            <div class="cert-title">Приложение №1</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Среднее профессиональное образование. Шифр: 230111. Специальность: Программирование в компьютерных системах. Очная форма.</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 25.09.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-landmark"></i></div>
+            <div class="cert-title">УСТАВ</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Утверждён протоколом о создании Учреждения №1 от 02.04.2024г. Перерегистрация в МИНЮС 06.11.2025г.</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 02.04.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-file-signature"></i></div>
+            <div class="cert-title">Протокол №1</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Решение. Протокол №1 от 02.04.2024г. О создании Учреждения «Инновационного колледжа АйТи и Бизнеса».</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 02.04.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-handshake"></i></div>
+            <div class="cert-title">Соглашение №1</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Дополнительное соглашение о государственно-частном партнерстве между Мэрией г. Джалал-Абад и ОсОО «АйТи Ран».</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 15.08.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="cert-title">Протокол №2</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-subtitle">Назначение директором — Кочкорбаев Асылбек Акимбаевич.</p>
+          </div>
+          <div class="cert-footer">
+            <span class="cert-year"><i class="fas fa-calendar-alt"></i> 01.07.2024</span>
+            <span class="cert-badge">✓ Действует</span>
+          </div>
+        </div>
+
+      </div>
+      <button class="cert-nav-btn" id="certNext" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">FAQ</div>
+      <h2 class="section-title reveal">Частые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question"><span>Какая стоимость обучения?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Стоимость зависит от программы. Есть бюджетные места. Подробнее — на странице стоимости.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>Есть ли общежитие?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Да, колледж предоставляет общежитие для иногородних студентов.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>Какие документы нужны?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Паспорт, аттестат об образовании, фото 3×4 (4 шт.), мед. справка 086-У.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>Можно ли перевестись из другого колледжа?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Да, мы принимаем студентов переводом. Свяжитесь с приёмной комиссией.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section-dark" id="contacts">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Контакты</div>
+      <h2 class="section-title reveal" style="color:#fff">Свяжитесь с нами</h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card glass reveal"><i class="fas fa-map-marker-alt"></i><h4>Адрес</h4><p>г. Манас, ул. Жусупа Бакиева 7</p></div>
+      <div class="contact-card glass reveal"><i class="fas fa-phone"></i><h4>Телефон</h4><p>+996 (XXX) XX-XX-XX</p></div>
+      <div class="contact-card glass reveal"><i class="fas fa-envelope"></i><h4>Email</h4><p>info@itcollege.kg</p></div>
+      <div class="contact-card glass reveal"><i class="fas fa-clock"></i><h4>Часы работы</h4><p>Пн–Пт: 9:00–18:00</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- подвал -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <img src="/img/logo.png" alt="IT COLLEGE" style="height: 60px; width: auto; max-width: 250px; object-fit: contain; filter: brightness(0) invert(1);">
+        </div>
+        <p style="color:rgba(255,255,255,.6);margin-top:10px;">Инновационный колледж IT и бизнеса. Образование нового поколения.</p>
+      </div>
+      <div><h4>Навигация</h4><a href="#about">О нас</a><a href="#programs">Программы</a><a href="#steps">Поступление</a><a href="#contacts">Контакты</a></div>
+      <div><h4>Система</h4><a href="/login.html">Вход</a><a href="/register.html">Регистрация</a><a href="/dashboard.html">Личный кабинет</a></div>
+      <div><h4>Соцсети</h4><div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Инновационный колледж IT и бизнеса. Все права защищены.</div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="btt" class="btt"><i class="fas fa-arrow-up"></i></button>
+
+<script src="/js/landing.js"></script>
+</body>
+</html>

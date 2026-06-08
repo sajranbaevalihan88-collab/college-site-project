@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "College Platform API",
+    "version": "1.0.0",
+    "description": "API документация для платформы колледжа"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "Local server"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "Авторизация пользователя",
+        "tags": ["Auth"],
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Успешный вход" },
+          "401": { "description": "Неверный логин или пароль" }
+        }
+      }
+    },
+    "/api/grades": {
+      "get": {
+        "summary": "Получение списка оценок",
+        "tags": ["Grades"],
+        "responses": {
+          "200": { "description": "Список оценок" }
+        }
+      }
+    },
+    "/api/attendance": {
+      "get": {
+        "summary": "Получение списка посещаемости",
+        "tags": ["Attendance"],
+        "responses": {
+          "200": { "description": "Данные о посещаемости" }
+        }
+      }
+    },
+    "/api/schedule": {
+      "get": {
+        "summary": "Получение расписания",
+        "tags": ["Schedule"],
+        "responses": {
+          "200": { "description": "Расписание" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход | Инновационный колледж</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- потом вынесу стили в отдельный файл, пока так норм -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a2e; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .auth-container { width: 100%; max-width: 400px; padding: 20px; }
+    .auth-card { background: #fff; border-radius: 12px; padding: 40px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .auth-header { text-align: center; margin-bottom: 30px; }
+    .auth-header svg { width: 40px; height: 40px; stroke: #F9A826; stroke-width: 2; margin-bottom: 10px; }
+    .auth-header h2 { font-size: 1.5rem; color: #0F3460; font-weight: 700; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; color: #64748b; }
+    .form-control { width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-size: 1rem; transition: border-color 0.3s; }
+    .form-control:focus { outline: none; border-color: #0F3460; box-shadow: 0 0 0 3px rgba(15,52,96,0.1); }
+    .btn { display: block; width: 100%; padding: 14px; background: #0F3460; color: #fff; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
+    .btn:hover { background: #1A4B85; }
+    .error-msg { color: #e53e3e; font-size: 0.85rem; margin-top: 5px; display: none; }
+    .auth-footer { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #64748b; }
+    .auth-footer a { color: #0F3460; font-weight: 600; text-decoration: none; }
+    .auth-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <img src="/img/logo.png" alt="IT COLLEGE" style="height: 50px; margin-bottom: 10px;">
+      <h2>Вход в систему</h2>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="user@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+      </div>
+      <div id="errorMsg" class="error-msg"></div>
+      <button type="submit" class="btn" style="margin-top: 20px;">Войти</button>
+    </form>
+    <div class="auth-footer">
+      Нет аккаунта? <a href="/register.html">Зарегистрироваться (только для студентов)</a><br><br>
+      <a href="/"><i class="fas fa-arrow-left"></i> На главную</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('loginForm');
+  const errorMsg = document.getElementById('errorMsg');
+  const btn = form.querySelector('button[type="submit"]');
+
+  // Сбрасываем ошибку при изменении полей
+  form.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', () => {
+      errorMsg.style.display = 'none';
+      input.style.borderColor = '';
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    // Валидация на фронте
+    if (!email) {
+      showError('Введите email', 'email'); return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('Некорректный формат email', 'email'); return;
+    }
+    if (!password) {
+      showError('Введите пароль', 'password'); return;
+    }
+    if (password.length < 4) {
+      showError('Пароль слишком короткий', 'password'); return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Вход...';
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showError(data.error || 'Ошибка входа');
+        return;
+      }
+
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      window.location.href = '/dashboard.html';
+    } catch (err) {
+      showError('Нет соединения с сервером. Попробуйте позже.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Войти';
+    }
+  });
+
+  function showError(msg, fieldId = null) {
+    errorMsg.textContent = msg;
+    errorMsg.style.display = 'block';
+    if (fieldId) {
+      const field = document.getElementById(fieldId);
+      if (field) field.style.borderColor = '#e53e3e';
+    }
+  }
+</script>
+</body>
+</html>
